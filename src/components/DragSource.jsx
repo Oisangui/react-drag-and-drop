@@ -20,7 +20,7 @@ function DragSource(props){
     useEffect(loadSquares, []);
     console.log('rendering source')
     return (
-        <div>
+        <div className="drag-source">
             {squares}
         </div>
     );

@@ -10,7 +10,7 @@ function SaveButton(props){
         <div>
             <button 
             onClick={handleClick}
-            >\
+            >
             Export JSON
             </button>
         </div>

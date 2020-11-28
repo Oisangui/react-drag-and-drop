@@ -15,10 +15,17 @@ function DragTarget(props){
         }
         setSquares(squares);
     }
+    const style = {
+        display: `grid`,
+        gridTemplateColumns: `repeat(${hSquares}, 100px)`,
+        gridTemplateRows: `repeat(${vSquares}, 100px)`,
+        gap: `2px`,
+    }
     useEffect(loadSquares, []);
-    console.log('rendering target')
+
+    
     return (
-        <div>
+        <div className="drag-target" style={style}>
             {squares}
         </div>
     );

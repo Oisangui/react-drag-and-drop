@@ -11,7 +11,7 @@ function LoadButton(props){
         <div>
             <button 
             onClick={handleClick}
-            >\
+            >
             Import JSON
             </button>
         </div>
