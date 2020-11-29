@@ -1,7 +1,7 @@
 # Builder
 
 ## Usage
-(supposing ```mover``` mode)
+(supposing ```move``` mode)
 * To place an element from the source to the board, do a drag-and-drop gesture.
 * It is possible to drag elements from inside the board.
 * When dropping in an occupied square, the element in the square is repositioned if possible. If not possible, then the new element will be deleted if it comes from the board.
