@@ -1,9 +1,10 @@
 .App {
   display: flex;
   flex-direction: column;
+  height: 100vh;
+  background-color: darkred;
 }
 
 .drag-source {
-  display: flex;
-  flex-flow: row wrap;
+
 }
