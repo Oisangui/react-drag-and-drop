@@ -7,6 +7,7 @@ function SquareContainer(props){
     const style = {
         display: `flex`,
         backgroundColor: `oldlace`,
+        margin:0,
     }
     
     const handleDrop = function(e){
@@ -26,6 +27,8 @@ function SquareContainer(props){
             data[`${i},${j}`] = d;
             return data;
         })
+        e.position = `${i},${j}`;
+        e.square = square;
     }
     useEffect(()=>{if (!data){setSquare({square:null, data:null});return;} setSquare({
         square : <DraggableSquare data={data}/>,
@@ -43,11 +46,11 @@ function SquareContainer(props){
         style={style}
         onDragOver={(e)=>{
             e.preventDefault();
-            //e.currentTarget.style.fontSize='20px';
+            e.currentTarget.style.backgroundColor='Moccasin';
             // Do some visual effect.
         }}
         onDragLeave={(e)=>{
-            //e.currentTarget.style.fontSize='10px';
+            e.currentTarget.style.backgroundColor='OldLace';
             // Do some visual effect.
         }}
         onDrop={handleDrop}

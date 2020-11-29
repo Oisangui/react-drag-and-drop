@@ -51,8 +51,34 @@ function DragTarget(props){
         setSquares([]);
         setSquares(newSquares);
     }
+    const handleDrop = function(e){
+        e.preventDefault();
+        //e.currentTarget.style.fontSize='30px';
+        const droppedData = JSON.parse(e.dataTransfer.getData('application/json'));
+        if (onOverlap === 'replace') {
+            return;
+        }
+
+        //supposing onOverlap === 'move'
+/*         setSquare({
+            square : <DraggableSquare data={droppedData}/>,
+            data: droppedData,
+        }
+        ); */
+/*         setData(data=>{
+            let d = Object.assign({}, data[`${i},${j}`]);
+            Object.keys(droppedData).forEach((key)=>{
+                d[key] = droppedData[key];
+            });
+            data[`${i},${j}`] = d;
+            return data;
+        }) */
+        console.log(e.position);
+        console.log(e.square);
+        e.stopPropagation();
+    }
     return (
-        <div className="drag-target" style={style}>
+        <div className="drag-target" style={style} onDrop={handleDrop}>
             {squares}
         </div>
     );
