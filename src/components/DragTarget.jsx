@@ -62,7 +62,7 @@ function DragTarget(props){
             const makeKey = (i, j)=>`${i},${j}`;
             const up = makeKey(i, j-1);
             const down = makeKey(i, j+1);
-            const left = makeKey(i - 1, j-1);
+            const left = makeKey(i - 1, j);
             const right = makeKey(i + 1, j);
             const d1 = makeKey(i + 1, j+1);
             const d2 = makeKey(i + 1, j-1);
