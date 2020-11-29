@@ -5,18 +5,26 @@ import Actions from './Actions';
 
 function Builder(props) {
     const { title, possibleSquaresData, targetGridData } = props;
-    const exportFunctionality = function(){
-
+    const style = {
+        display: `flex`, 
+        flexDirection: `column`,
+        justifyContent: `center`,
+        alignItems: `center`,
+        backgroundColor: `darkred`,
+        color: `ghostwhite`,
     }
-    const importFunctionality = function(data){
-
+    const actions = {
+        exportFunctionality: function(){console.log(`this is wrong`)},
+        importFunctionality: function(){console.log(`this is wrong`)}
     }
     return (
-        <div>
+        <div
+        style={style}
+        >
             <h3>{title}</h3>
             <DragSourceCont data={possibleSquaresData}/>
-            <DragTargetCont data={targetGridData}/>
-            <Actions importer={importFunctionality} exporter={exportFunctionality}/>
+            <DragTargetCont data={targetGridData} actions={actions}/>
+            <Actions actions={actions}/>
         </div>
     );
 }

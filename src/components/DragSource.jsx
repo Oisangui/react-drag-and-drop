@@ -1,9 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import DraggableSquare from './DraggableSquare';
 
 function DragSource(props){
     const { data } = props;
-    const [ squares, setSquares ] = useState([]);
+    const style = {
+        display: `flex`,
+        flexFlow: `row wrap`,
+        height: `5rem`,
+        width: `${data.numberOfSquares * 5}rem`
+    }
     const loadSquares = function(){
         const squares = [];
         let i = 0;
@@ -15,13 +20,15 @@ function DragSource(props){
                 i++;
             }
         );
-        setSquares(squares);
+        return squares;
     }
-    useEffect(loadSquares, []);
     console.log('rendering source')
     return (
-        <div className="drag-source">
-            {squares}
+        <div 
+        className="drag-source"
+        style={style}
+        >
+            {loadSquares()}
         </div>
     );
 }

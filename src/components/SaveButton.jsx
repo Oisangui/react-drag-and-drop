@@ -1,18 +1,20 @@
 import React from 'react';
 
 function SaveButton(props){
-    const { exportFunctionality } = props;
+    const { actions, style } = props;
     const handleClick = function(){
-        const data = exportFunctionality();
-        console.log('save data NOT IMPLEMENTED');
+        const data = actions.exportFunctionality();
+        const dataStr = "data:application/json;charset=utf-8," + encodeURIComponent(JSON.stringify(data));
+        const dlAnchorElem = document.createElement('a');
+        dlAnchorElem.setAttribute("href", dataStr);
+        dlAnchorElem.setAttribute("download", "layout.json");
+        dlAnchorElem.click();
     }
     return (
-        <div>
-            <button 
-            onClick={handleClick}
-            >
+        <div style={style}
+        onClick={handleClick}
+        >
             Export JSON
-            </button>
         </div>
     );
 }
