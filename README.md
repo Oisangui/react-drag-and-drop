@@ -14,3 +14,6 @@
 * No hay límite en los datos posibles de cada elemento de la fuente. Los elementos de la fuente son una interfaz, que por default es el componente MySquare.
 * MySquare se asume reemplazable cualquier componente siempre y cuando se le alimente con los datos necesarios en ```config.js```.
 * Por default viene en modo move. Si se cambia a modo replace, entonces no habrá reposicionamiento; el elemento entrante siempre reemplaza al incumbente.
+
+### Librerías utilizadas
+* Pure ReactJS.
