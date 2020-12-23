@@ -9,26 +9,14 @@ function DragSource(props){
         height: `5rem`,
         width: `${data.numberOfSquares * 5}rem`
     }
-    const loadSquares = function(){
-        const squares = [];
-        let i = 0;
-        data.data.forEach(
-            (d) => {
-                squares.push(
-                    <DraggableSquare data={d} key={`${i}`}/>
-                );
-                i++;
-            }
-        );
-        return squares;
-    }
-    console.log('rendering source')
     return (
         <div 
         className="drag-source"
         style={style}
         >
-            {loadSquares()}
+            {data.data.map((d, i) => (
+                    <DraggableSquare data={d} key={i}/>
+            ))}
         </div>
     );
 }

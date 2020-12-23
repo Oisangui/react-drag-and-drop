@@ -1,7 +1,7 @@
 const data = {
     title: 'Builder',
     possibleSquaresData: {
-        numberOfSquares: 8,
+        numberOfSquares: 12,
         data: [
             {
                 label: 'A',
@@ -35,11 +35,41 @@ const data = {
                 label: 'H',
                 color:`black`
             },
+            {
+                label: 'I',
+                color:`green`
+            },
+
+            {
+                label: 'J',
+                color:`brown`
+            },
+
+            {
+                label: 'K',
+                color:`navy`
+            },
+            {
+                label: 'L',
+                color:`azure`
+            },
+            {
+                label: 'M',
+                color:`deeppink`
+            },
+            {
+                label: 'N',
+                color:`red`
+            },
+            {
+                label: 'O',
+                color:`gold`
+            },
         ]
     },
     targetGridData: {
-        hSquares: 5,
-        vSquares: 8,
+        hSquares: 12,
+        vSquares: 9,
         onOverlap: 'move' //replace or move
     },
 }
